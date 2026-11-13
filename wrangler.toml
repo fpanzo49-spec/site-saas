@@ -1,0 +1,14 @@
+name = "painel"   # tem de ser IGUAL ao nome do Worker na Cloudflare
+
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+# Fotos (R2): o MESMO bucket do site (criado antes do primeiro deploy)
+[[r2_buckets]]
+binding = "FOTOS"
+bucket_name = "restaurante-fotos"
+
+# Painel escondido do gerente. Endereço sugerido: gestao.linajuve.online (Custom domain). Não pôr link para ele no site.
+# Variables and Secrets:
+#   DATABASE_URL            (obrigatório) a MESMA string do Neon
+#   RESEND_API_KEY, RESEND_FROM   (obrigatórios para recuperar senha por email e enviar campanhas)
